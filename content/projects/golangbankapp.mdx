@@ -1,6 +1,6 @@
 ---
 title: Bank Application in Go with Gin, Docker and K8S
-description: In this application I created a REST and GRPc interface, focused on performance for Golang.
+description: In this application I created a REST and gRPC interface, focused on performance for Golang.
 date: "2024-07-01"
 url: https://github.com/IgorCastilhos/BankApplication
 published: true
@@ -10,4 +10,77 @@ repository: https://github.com/IgorCastilhos/BankApplication
 
 # Bank Application in Go with Gin, Docker and K8S
 
-Cores e Festas is a store in Porto Alegre, Brazil, focused on selling products to birthday parties.
+### Technologies and concepts applied
+
+
+
+- Go 1.22.3
+  - golang-migrate
+  - sqlc
+- Gin
+- PostgreSQL
+- gRPC
+- Rest API
+- Protocol Buffers
+- Postman
+- Evans
+- Table Plus
+- Docker
+- Kubernetes
+- AWS / Azure
+
+---
+
+## Database Design Tools and Management
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7515b773-ff31-49e8-bec8-7b2a71151742/1956701e-023b-4995-bf5d-2c35478dedbd/Untitled.png)
+
+## Diagrams
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7515b773-ff31-49e8-bec8-7b2a71151742/e5a0fe46-65bd-4000-8a32-e501040769a2/Untitled.svg)
+
+### Accounts Table
+
+- id bigserial [pk]
+
+| Name | Storage Size | Description | Range |
+| --- | --- | --- | --- |
+| bigserial | 8 bytes (64 bits) | large autoincrement int | 1 to 9223372036854775807 |
+- **`bigserial`** should be used if you anticipate the use of more than $2^{31}$ identifiers over the lifetime of the table.
+- owner varchar
+  - The name of the owner of the account
+- balance bigint
+  - It is used to facilitate the process, but in real life, some currencies use decimal types
+- currency varchar
+  - Label for the currency type (e.g. Dollar, Euro, Real, etc)
+- created_at timestamptz
+  - timestamptz stands for “timestamp with time zone”.
+  - **Stores Date and Time**: It records both the date and the time.
+  - **Includes Time Zone Information**: It is timezone-aware, meaning it stores the timestamp in UTC (Coordinated Universal Time) and displays it in the session’s time zone.
+  - **Automatic Time Zone Adjustment**: When you insert a timestamp with a time zone into a `timestamptz` column, PostgreSQL converts it to UTC for storage. When you retrieve the value, it is converted back to the session’s time zone.
+
+### Benefits of Using ‘timestamptz’
+
+  1. **Time Zone Awareness:**
+ - Ensures that timestamps are consistent globally. Regardless of where the data is inserted or queried from, the ‘**timestamptz’** type helps maintain a consistent and accurate time record.
+  2. **Avoids Ambiguities:**
+ - Handles daylight saving time changes and other time zone-related issues, avoiding the common pitfalls of time zone differences.
+  3. **Convenience:**
+ - Automatically converts timestamps to the appropriate time zone when displaying to users, which can simplify handling date and time data in applications.
+
+### Important Notes
+
+  - **Session Time Zone:**
+  - The displayed time zone can be affected by the session’s time zone setting. You can set the session’s time zone using -e TZ=Timezone:
+
+  ```bash
+  docker run --name postgres \
+    -e POSTGRES_USER=root \
+    -e POSTGRES_PASSWORD=secret \
+    -e TZ=America/Sao_Paulo \
+    -p 5432:5432 \
+    -d postgres:16.3-alpine3.19
+  ```
+
+  - **Comparison and Arithmetic:**
+  - ‘timestamptz’ allows direct comparison and arithmetic operations on timestamps, which can be very useful for queries involving time ranges, differences, etc.
