@@ -4,7 +4,7 @@ description: In this application I created a REST and gRPC interface, focused on
 date: "2024-07-01"
 url: https://github.com/IgorCastilhos/BankApplication
 published: true
-repository: https://github.com/IgorCastilhos/BankApplication
+repository: IgorCastilhos/BankApplication
 ---
 
 
@@ -71,13 +71,13 @@ repository: https://github.com/IgorCastilhos/BankApplication
 
 ### Important Notes
 
-  - **Session Time Zone:**
-  - The displayed time zone can be affected by the session’s time zone setting. You can set the session’s time zone using -e TZ=Timezone:
+  **Session Time Zone:**
+  The displayed time zone can be affected by the session’s time zone setting. You can set the session’s time zone using -e TZ=Timezone:
 
   ```bash
   docker run --name postgres \
-    -e POSTGRES_USER=root \
-    -e POSTGRES_PASSWORD=secret \
+    -e POSTGRES_USER=[user] \
+    -e POSTGRES_PASSWORD=[password] \
     -e TZ=America/Sao_Paulo \
     -p 5432:5432 \
     -d postgres:16.3-alpine3.19
