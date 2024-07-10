@@ -1,0 +1,87 @@
+---
+title: Hamburger Shop Application
+description: In this project, I created a web application for a hamburger shop using React, Tailwind CSS, Node.js and PostgreSQL
+date: "2024-07-01"
+url: https://github.com/IgorCastilhos/hamburgershop-web
+published: true
+repository: IgorCastilhos/hamburgershop-web
+---
+
+
+# Hamburger Shop Application
+
+### Description
+This a web application designed for restaurant managers to create an account, view key metrics about their restaurant, and make data-driven decisions. The platform provides insights into various aspects of the restaurant's performance, such as sales, customer name, phone, most popular products, and more.
+
+### Features of the Back-End
+
+> The **summary** of the features is listed below. All the features contains E2E tests.
+
+* **Register a new restaurant**<br/>
+* **Sign in as a restaurant manager**<br/>
+* **Register as a new customer**<br/>
+* **Create an order to the restaurant**<br/>
+* **Manage the restaurant menu**<br/>
+* **Manage the restaurant evaluations**<br/>
+* **Leave an evaluation**<br/>
+* **Manage the restaurant orders**<br/>
+* **Update the restaurant public profile**<br/>
+* **Open/close the restaurant**<br/>
+* **List metrics from the restaurant**<br/>
+
+### Getting Started in the Back-End
+
+I've used Docker to run the database. If you already have Docker installed, clone this repository, install the dependencies, set up the Docker container and run the application.
+
+> You must run the migrations to create the database tables and run the seed script to populate the database with fake data.
+
+```sh
+bun i
+docker compose up -d
+bun migrate
+bun seed
+bun dev
+```
+
+---
+
+### Features on the Front-End
+
+- **Account Management:** Create and manage a manager account with secure authentication.
+- **Metrics Dashboard:** View comprehensive metrics and reports about the restaurant's performance.
+- **User-Friendly Interface:** Intuitive and responsive design for easy navigation and data visualization.
+- **Data Filtering and Sorting:** Easily filter and sort data to focus on specific metrics.
+- **Notification System:** Receive alerts and notifications for important events and metrics.
+
+### Getting Started in the Front-End
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```sh
+git clone https://github.com/IgorCastilhos/hamburgershop-web.git
+   ```
+
+2. Navigate to the project directory:
+```sh
+cd hamburgershop-web
+   ```
+
+3. Install dependencies:
+```sh
+npm install
+   ```
+
+### Running the Application
+
+1. Start the development server:
+```sh
+npm run dev
+   ```
+
+2. Open your browser and visit `http://localhost:5173` to see the application in action.

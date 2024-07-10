@@ -21,10 +21,10 @@ export default async function ProjectsPage() {
 	}, {} as Record<string, number>);
 
 	const featured = allProjects.find(
-		(project) => project.slug === "golangbankapp",
+		(project) => project.slug === "coresefestas",
 	)!;
-	const top2 = allProjects.find((project) => project.slug === "foodorderingapp")!;
-	const top3 = allProjects.find((project) => project.slug === "employeemanagementsys")!;
+	const top2 = allProjects.find((project) => project.slug === "hamburgershop")!;
+	const top3 = allProjects.find((project) => project.slug === "golangbankapp")!;
 	const sorted = allProjects
 		.filter((p) => p.published)
 		.filter(

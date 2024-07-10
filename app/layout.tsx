@@ -9,10 +9,10 @@ export const metadata: Metadata = {
         default: "igorcastilhos.com",
         template: "%s | igorcastilhos.com",
     },
-    description: "Student and intern at Cores e Festas",
+    description: "Full-Stack Developer",
     openGraph: {
         title: "igorcastilhos.com",
-        description: "Student and intern at Cores e Festas",
+        description: "Full-Stack Developer",
         url: "https://igorcastilhos.com",
         siteName: "igorcastilhos.com",
         images: [
