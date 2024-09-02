@@ -35,15 +35,15 @@ export default function Home() {
 			<div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 			<div className="my-16 text-center animate-fade-in">
 				<h2 className="text-sm text-zinc-500 ">
-					I'm working at{" "}
+					I'm working for the{" "}
 					<Link
 						target="_blank"
-						href="https://coresefestas.com.br"
+						href="https://www.tjmrs.jus.br/"
 						className="underline duration-500 hover:text-zinc-300"
 					>
-						Cores e Festas
+						Court of Military Justice of the State of Rio Grande do Sul
 					</Link>{" "}
-					to build the best experience of an online shop website.
+					to build internal products and manage applications.
 				</h2>
 			</div>
 		</div>
