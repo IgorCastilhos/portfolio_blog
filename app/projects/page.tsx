@@ -20,7 +20,7 @@ export default async function ProjectsPage() {
 	}, {} as Record<string, number>);
 
 	const featured = allProjects.find(
-		(project) => project.slug === "court",
+		(project) => project.slug === "communication_between_frontend_and_backend",
 	)!;
 	const top2 = allProjects.find((project) => project.slug === "hamburgershop")!;
 	const top3 = allProjects.find((project) => project.slug === "golangbankapp")!;
